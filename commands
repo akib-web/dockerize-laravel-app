@@ -1,3 +1,15 @@
 docker-compose down -v
 docker-compose build --no-cache
 docker-compose up -d
+
+# run command to specific app in side the docker
+docker exec -it yourproject-web-1:name_of_app bash
+
+# You can also do it in one line from your host machine:
+
+docker exec -it yourproject-web-1 php artisan migrate
+
+
+# or, if you’re not sure of the container name, you can use:
+
+docker-compose exec web php artisan migrate
